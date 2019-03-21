@@ -5,6 +5,7 @@
 #include "DepositSquare.h"
 #include "FieldType.h"
 #include <vector>
+#include <array>
 #include <memory>
 
 
@@ -18,7 +19,43 @@ public:
 		fields{ std::make_unique<StartSquare>(1000),
 				std::make_unique<BonusSquare>(300),
 				std::make_unique<PenaltySquare>(300),
-				std::make_unique<DepositSquare>(300) } {}
+				std::make_unique<DepositSquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<DepositSquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300) } {}
 	
 	~Board() = default;
 
@@ -27,12 +64,14 @@ public:
 		return fields.front();
 	}
 
-	std::unique_ptr<ISquare>& getEnd()
+	auto& operator[](int index)
 	{
-		return fields.back();
+		return fields[index];
 	}
 
 private:
-	std::vector<std::unique_ptr<ISquare>> fields;
+	//std::vector<std::unique_ptr<ISquare>> fields;
+	static constexpr int BOARD_SIZE = 40;
+	std::array <std::unique_ptr<ISquare>, BOARD_SIZE> fields;
 };
 

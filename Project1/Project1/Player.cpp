@@ -5,7 +5,7 @@ void Player::modifyWealth(int value)
 	money += value;
 }
 
-std::unique_ptr<ISquare>& Player::movePiece()
+int Player::movePiece()
 {
 	return piece.moveToNextSquare();
 }

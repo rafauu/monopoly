@@ -7,13 +7,13 @@ class Square;
 class Player
 {
 public:
-	Player(std::string name, int money, std::unique_ptr<ISquare>& startingSquare) :
+	Player(std::string name, int money, int startingSquare = 0) :
 		name(name), money(money), piece(startingSquare) {};
 	~Player() = default;
 
 	void modifyWealth(int value);
 
-	std::unique_ptr<ISquare>& movePiece();
+	int movePiece();
 
 	bool isBankrupt() const;
 

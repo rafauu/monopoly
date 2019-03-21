@@ -52,4 +52,4 @@ c:\users\gliniak\source\repos\project1\packages\microsoft.googletest.v140.windes
           ]
 cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   test.cpp
-  Sample-Test1.vcxproj -> c:\Users\gliniak\source\repos\Project1\Debug\Sample-Test1.exe
+  Sample-Test1.vcxproj -> C:\Users\gliniak\source\repos\Project1\Debug\Sample-Test1.exe

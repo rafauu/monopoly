@@ -2,18 +2,20 @@
 #include <memory>
 #include <vector>
 #include "ISquare.h"
+#include <iostream>
 class Piece
 {
 public:
 	//Piece() {};
-	Piece(std::unique_ptr<ISquare>& startingSquare) : currentSquare(startingSquare) {}
+	Piece(int startingSquareIndex) : currentSquareIndex(startingSquareIndex) {}
 	~Piece() = default;
-	std::unique_ptr<ISquare>& moveToNextSquare()
+	int moveToNextSquare()
 	{
-		currentSquare = std::make_unique< ISquare> (currentSquare.get()+1);
-		return currentSquare;
+		std::cout << "wtf is goin on here? : " << currentSquareIndex << std::endl;
+		currentSquareIndex += 1;
+		return currentSquareIndex;
 	}
 private:
-	ISquare& currentSquare;
+	int currentSquareIndex;
 };
 

@@ -12,7 +12,7 @@ public:
 	MonopolyGame() :
 		dice{Die({1,2,3,4,5,6}), Die({1,2,3,4,5,6}) },
 		board{},
-		players{ Player{"Andrzej", 500, board.getStart()}, Player{"Duda", 500, board.getStart()} }
+		players{ Player{"Andrzej", 500}, Player{"Duda", 500} }
 	{}
 	~MonopolyGame() = default;
 
@@ -21,21 +21,21 @@ public:
 		std::random_device rnd_device;
 		while (not lastManStanding())
 		{
-			for (auto player : players)
+			for (auto& player : players)
 			{
 				auto diceRoll = rollEveryDice(rnd_device);
 				std::cout << " Player " << player << " rolled " << diceRoll << std::endl;
 				for (int step=0; step < diceRoll - 1; ++step)
 				{
-					auto& nextSquare = player.movePiece();
+					auto nextSquare = player.movePiece();
 					//(*nextSquare).onPass(player);
-					nextSquare->onPass(player);
+					board[nextSquare]->onPass(player);
 				}
 				
-				auto& nextSquare = player.movePiece();
-				std::cout << board.getEnd().get() - nextSquare.get() << std::endl;
+				auto nextSquare = player.movePiece();
+				std::cout << 40 - nextSquare << std::endl;
 				//(*nextSquare).onStay(player);
-				nextSquare->onStay(player);
+				board[nextSquare]->onStay(player);
 			}
 		}
 	}
