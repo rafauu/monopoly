@@ -3,20 +3,40 @@
 
 void EstateSquare::onStay(Player& player)
 {
-	if (owner == nullptr )
+	if (estateIsntOwned())
 	{
-		if(player.promptBuyout(value, rent))
-		{
-			owner = std::make_shared<Player>(player);
-			player.modifyWealth(-value);
-		}
+		offerPurchase(player);
 		return;
 	}
-	if (owner.get() != &player)
+	if (playerIsNotOwner(player))
 	{
-		owner->modifyWealth(rent);
-		player.modifyWealth(-rent);
+		drainRent(player);
 	}
+}
+
+void EstateSquare::drainRent(Player& player)
+{
+	owner->modifyWealth(rent);
+	player.modifyWealth(-rent);
+}
+
+void EstateSquare::offerPurchase(Player& player)
+{
+	if (player.promptBuyout(value, rent))
+	{
+		owner = std::make_shared<Player>(player);
+		player.modifyWealth(-value);
+	}
+}
+
+bool  EstateSquare::estateIsntOwned()
+{
+	return owner == nullptr;
+}
+
+bool  EstateSquare::playerIsNotOwner(Player& player)
+{
+	return owner.get() != &player;
 }
 
 void EstateSquare::onPass(Player& player)

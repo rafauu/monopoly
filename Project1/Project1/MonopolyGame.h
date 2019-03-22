@@ -28,6 +28,8 @@ public:
 		{
 			for (auto& player : players)
 			{
+				if (player->isBankrupt())
+					continue;
 				auto diceRoll = rollEveryDice(rnd_device);
 				std::cout << " Player " << *player << " rolled " << diceRoll << std::endl;
 				for (int step=0; step < diceRoll - 1; ++step)
@@ -61,7 +63,7 @@ private:
 		{
 			
 			roll += die.roll(rng);
-			std::cout << "wtf: roll: " << roll << std::endl;
+			std::cout << "roll: " << roll << std::endl;
 		}
 		return roll;
 	}

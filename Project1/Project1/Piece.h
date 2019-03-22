@@ -11,7 +11,7 @@ public:
 	~Piece() = default;
 	int moveToNextSquare()
 	{
-		std::cout << "wtf is goin on here? : " << currentSquareIndex << std::endl;
+		std::cout << "Current square : " << currentSquareIndex << std::endl;
 		currentSquareIndex += 1;
 		if (currentSquareIndex >= 40)
 		{

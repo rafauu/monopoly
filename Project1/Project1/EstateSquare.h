@@ -13,6 +13,10 @@ public:
 	void onPass(Player& player);
 	~EstateSquare() = default;
 private:
+	void drainRent(Player& player);
+	void offerPurchase(Player& player);
+	bool estateIsntOwned();
+	bool playerIsNotOwner(Player& player);
 	int value;
 	int rent;
 	std::shared_ptr<Player> owner = nullptr;
