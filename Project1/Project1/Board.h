@@ -4,6 +4,8 @@
 #include "PenaltySquare.h"
 #include "DepositSquare.h"
 #include "EstateSquare.h"
+#include "RandomSquare.h"
+#include "BlackHole.h"
 #include "FieldType.h"
 #include <vector>
 #include <array>
@@ -15,49 +17,7 @@ class Board
 {
 
 public:
-	Board() :
-
-		fields{ std::make_unique<StartSquare>(1000),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<EstateSquare>(400, 100),
-				std::make_unique<DepositSquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(3000),
-				std::make_unique<EstateSquare>(400, 100),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<EstateSquare>(300, 200),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<EstateSquare>(400, 100),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<EstateSquare>(400, 100),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<EstateSquare>(400, 100),
-				std::make_unique<BonusSquare>(300) } {}
-	
+	Board(std::array <std::unique_ptr<ISquare>, BOARD_SIZE> fields) : fields{ std::move(fields) } {}
 	~Board() = default;
 
 	std::unique_ptr<ISquare>& getStart()
@@ -71,8 +31,6 @@ public:
 	}
 
 private:
-	//std::vector<std::unique_ptr<ISquare>> fields;
-	static constexpr int BOARD_SIZE = 40;
 	std::array <std::unique_ptr<ISquare>, BOARD_SIZE> fields;
 };
 

@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlackHole.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BonusSquare.cpp" />
     <ClCompile Include="DepositSquare.cpp" />
@@ -125,9 +126,11 @@
     <ClCompile Include="PenaltySquare.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RandomSquare.cpp" />
     <ClCompile Include="StartSquare.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlackHole.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="BonusSquare.h" />
     <ClInclude Include="DepositSquare.h" />
@@ -142,6 +145,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="ISquare.h" />
     <ClInclude Include="RandomAiPlayer.h" />
+    <ClInclude Include="RandomSquare.h" />
     <ClInclude Include="StartSquare.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -5,3 +5,4 @@ enum class FieldType
 	Bonus,
 	Penalty
 };
+static constexpr int BOARD_SIZE = 40;

@@ -12,13 +12,14 @@
 class MonopolyGame
 {
 public:
-	MonopolyGame() :
-		dice{Die({1,2,3,4,5,6}), Die({1,2,3,4,5,6}) },
-		board{},
-		players{ std::make_shared<GreedyAiPlayer>("Andrzej", 1000), 
-		         std::make_shared<RandomAiPlayer>("Duda", 1000) , 
-		         std::make_shared<HumanPlayer>("Bezimienny", 1000) }
+	MonopolyGame(const std::vector<Die>& dice,
+		         std::array <std::unique_ptr<ISquare>, BOARD_SIZE>&& board,
+		         const std::vector<std::shared_ptr<Player>>& players) :
+		dice{ dice },
+		board{ std::move(board) },
+		players{std::move(players)}
 	{}
+		
 	~MonopolyGame() = default;
 
 	void play()

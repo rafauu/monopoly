@@ -8,7 +8,4 @@ public:
 
 	virtual void onStay(Player& player) = 0;
 	virtual void onPass(Player& player) = 0;
-
-	
 };
-
