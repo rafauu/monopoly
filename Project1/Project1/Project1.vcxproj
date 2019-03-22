@@ -119,6 +119,7 @@
     <ClCompile Include="BonusSquare.cpp" />
     <ClCompile Include="DepositSquare.cpp" />
     <ClCompile Include="Die.cpp" />
+    <ClCompile Include="EstateSquare.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MonopolyGame.cpp" />
     <ClCompile Include="PenaltySquare.cpp" />
@@ -131,12 +132,16 @@
     <ClInclude Include="BonusSquare.h" />
     <ClInclude Include="DepositSquare.h" />
     <ClInclude Include="Die.h" />
+    <ClInclude Include="EstateSquare.h" />
     <ClInclude Include="FieldType.h" />
+    <ClInclude Include="GreedyAiPlayer.h" />
+    <ClInclude Include="HumanPlayer.h" />
     <ClInclude Include="MonopolyGame.h" />
     <ClInclude Include="PenaltySquare.h" />
     <ClInclude Include="Piece.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ISquare.h" />
+    <ClInclude Include="RandomAiPlayer.h" />
     <ClInclude Include="StartSquare.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

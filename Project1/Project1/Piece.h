@@ -13,6 +13,10 @@ public:
 	{
 		std::cout << "wtf is goin on here? : " << currentSquareIndex << std::endl;
 		currentSquareIndex += 1;
+		if (currentSquareIndex >= 40)
+		{
+			currentSquareIndex = 0;
+		}
 		return currentSquareIndex;
 	}
 private:

@@ -3,6 +3,7 @@
 #include "BonusSquare.h"
 #include "PenaltySquare.h"
 #include "DepositSquare.h"
+#include "EstateSquare.h"
 #include "FieldType.h"
 #include <vector>
 #include <array>
@@ -18,11 +19,21 @@ public:
 
 		fields{ std::make_unique<StartSquare>(1000),
 				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
+				std::make_unique<EstateSquare>(400, 100),
 				std::make_unique<DepositSquare>(300),
 				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(3000),
+				std::make_unique<EstateSquare>(400, 100),
+				std::make_unique<BonusSquare>(300),
 				std::make_unique<PenaltySquare>(300),
-				std::make_unique<DepositSquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<EstateSquare>(300, 200),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<BonusSquare>(300),
+				std::make_unique<PenaltySquare>(300),
+				std::make_unique<EstateSquare>(400, 100),
+				std::make_unique<PenaltySquare>(300),
 				std::make_unique<BonusSquare>(300),
 				std::make_unique<PenaltySquare>(300),
 				std::make_unique<BonusSquare>(300),
@@ -34,7 +45,7 @@ public:
 				std::make_unique<BonusSquare>(300),
 				std::make_unique<PenaltySquare>(300),
 				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
+				std::make_unique<EstateSquare>(400, 100),
 				std::make_unique<BonusSquare>(300),
 				std::make_unique<PenaltySquare>(300),
 				std::make_unique<BonusSquare>(300),
@@ -44,17 +55,7 @@ public:
 				std::make_unique<BonusSquare>(300),
 				std::make_unique<PenaltySquare>(300),
 				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
-				std::make_unique<BonusSquare>(300),
-				std::make_unique<PenaltySquare>(300),
+				std::make_unique<EstateSquare>(400, 100),
 				std::make_unique<BonusSquare>(300) } {}
 	
 	~Board() = default;
